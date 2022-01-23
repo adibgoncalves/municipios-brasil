@@ -1,0 +1,15 @@
+.muni {
+    display: flex;
+    flex-direction: column;
+}
+
+.muni .muni-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.muni .muni-search input {
+    width: auto;
+    margin-right: 20px;
+}

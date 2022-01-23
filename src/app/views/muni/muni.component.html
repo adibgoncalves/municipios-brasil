@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="d-flex flex-row align-itens-center pt-3">
+        <a class="btn btn-primary mr-3" routerLink="/lista">Voltar</a>
+        <h2 class="m-0">{{ getMunicipio().nome }}</h2>
+    </div>
+
+    <div class="mt-4">
+        <h6>Microrregião</h6>
+        <input type="text" class="form-control mb-3" value="{{getMunicipio().microrregiao.nome}}" disabled>
+
+        <h6>Mesorregião</h6>
+        <input type="text" class="form-control mb-3" value="{{getMunicipio().microrregiao.mesorregiao.nome}}" disabled>
+
+        <h6>UF</h6>
+        <input type="text" class="form-control mb-3" value="{{getMunicipio().microrregiao.mesorregiao.UF.sigla}} - {{getMunicipio().microrregiao.mesorregiao.UF.nome}}" disabled>
+
+        <h6>Região</h6>
+        <input type="text" class="form-control mb-3" value="{{getMunicipio().microrregiao.mesorregiao.UF.regiao.nome}}" disabled>
+    </div>
+</div>

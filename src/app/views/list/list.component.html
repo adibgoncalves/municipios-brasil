@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="muni pt-3">
+        <div class="muni-search">
+            <input [(ngModel)]="muniFilter" type="text" id="muni-filter" class="form-control" placeholder="Pesquise um município">
+        </div>
+
+        <div class="muni-list mt-4">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">UF</th>
+                    <th scope="col">Região</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let municipio of municipiosList">
+                    <th scope="row">{{ municipio.id }}</th>
+                    <td>{{ municipio.nome }}</td>
+                    <td>{{ municipio.microrregiao.mesorregiao.UF.sigla }}</td>
+                    <td>{{ municipio.microrregiao.mesorregiao.UF.regiao.nome }}</td>
+                    <td>
+                      <a class="btn btn-primary" [routerLink]="['/municipio/', municipio.id]">Ver</a>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
