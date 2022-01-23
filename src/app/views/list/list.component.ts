@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
   muniFilter = '';
+  loading:boolean = true;
 
   get municipiosList() {
     return this.municipiosapi.municipiosList.filter((municipio:any) => {
+      this.loading = false;
       return municipio.nome.toLowerCase().indexOf(this.muniFilter.toLowerCase()) !== -1;
     })
   }
@@ -20,7 +22,7 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.municipiosapi.listAll()
+    this.municipiosapi.listAll();
   }
 
 }

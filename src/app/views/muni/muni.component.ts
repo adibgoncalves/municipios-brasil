@@ -8,9 +8,11 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./muni.component.css']
 })
 export class MuniComponent implements OnInit {
-  id:any = ''
+  id:any = '';
+  loading:boolean = true;
 
   getMunicipio(){
+    this.loading = false;
     return this.municipiosapi.municipio;
   }
 
